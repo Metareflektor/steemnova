@@ -7,59 +7,19 @@
 
 The open source browsergame framework is based on [2Moons](https://gitter.im/2MoonsGame/Lobby/).
 
-Full source code is placed at [github.com/steemnova/steemnova](https://github.com/steemnova/steemnova) repository. It is fork of [jkroepke/2Moons](https://github.com/jkroepke/2Moons) for Steem community purposes. SteemNova repository is the center of the game. The opportunity was given to change the game code by Steemians, most probably [Utopians](https://utopian.io/) as a contribution. There are many things to modify starting from **graphics, languages, code improvements up to Steem integration and bughunting**.
+*This fork just removes new implementation of fighting system for a webspace, where no php-extension could be installed.*
+
+Fork of [github.com/steemnova/steemnova](https://github.com/steemnova/steemnova) repository which is a fork of [jkroepke/2Moons](https://github.com/jkroepke/2Moons) for Steem community purposes. 
 
 <p align="center">
 <img src="https://www.steem.center/images/archive/5/55/20160814202358%21Steem_Logo.png">
 </p>
 
 
-## Repository structure
-
-- [cache] - temporary cached server .tpl webpages
-- [chat] - AJAX ingame client-side chat
-- [includes]
-  - game engine
-  - configuration
-  - administration
-  - database scheme
-  - external libraries
-  - webpages functionality
-- [install]
-  - first installation
-  - database creation
-- [language] - translations: DE, EN, ES, FR, PL, PT, RU, TR
-- [licenses] - open source license schemes
-- [scripts] - client-side web browser .js scripts
-- [styles] 
-  - webpages .css templates
-  - webpages .tpl templates
-  - fonts
-  - images
-- [tests]
-
-
-## Roadmap
-
-SteemNova expansion goes as follows:
-1. ~~Reorganize github code. Specify README and LICENSE documentation~~. Fix any game issues if there will be any.
-2. ~~Create SteemNova Board community on top of Steem blockchain~~. (https://chainbb.com/f/steemnova)
-3. Game manual and tips & tricks for newbies.
-4. ~~Specify detailed explanation how the reward system will work~~. (https://steemit.com/steemnova/@steemnova/steemnova-weekly-sbd-reward-scheme-for-members-of-the-best-alliances)
-5. Announce bug bounties, artwork contests and utopian-io task requests for contributors (mobile UI, visual bugs etc.).
-6. ~~Steem accounts integration.~~ (https://github.com/steemnova/steemnova/pull/67)
-
-
 ## Local installation
 
-- Clone the repo: `git clone https://github.com/steemnova/steemnova`
+- Clone the repo: `git clone https://github.com/Metareflektor/steemnova`
 - Install components: `apt-get install apache2 php7.0 php7.0-gd php7.0-fpm php7.0-mysql php7.0-curl libapache2-mod mysql-server`
-- Install [php-ds extension](https://github.com/php-ds/extension)
-    - `apt-get install php-pear php7.0-dev`
-	- pecl install ds
-	- create file `30-ds.ini` with content `extension=ds.so` and put in `/etc/php/7.0/apache2/conf.d/` [source](https://github.com/php-ds/extension/issues/2#issuecomment-181855047)
-- Install HTML_BBCodeParser2
-    - `pear install HTML_BBCodeParser2-0.1.0`
 - Setup mysql: `create user USER identified by PASSWORD; create database DB; grant all privileges on DB.* to USER;`
 - Set write privileges to dirs: `cache/`, `includes/`
 - Run wizard: `127.0.0.1/install/install.php`
